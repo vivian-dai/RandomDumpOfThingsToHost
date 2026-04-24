@@ -20,7 +20,7 @@ function addPause() {
             
         }
         if(layerSize != -1) {
-            const z_off = layerSize * document.getElementById("layer").value;
+            const z_off = Math.round(layerSize * document.getElementById("layer").value * 1000)/1000;
             let newContent = [];
             for (let i = 0; i < lines.length; i++) {
                 const reg = new RegExp(`G0\\b.*\\bZ${z_off}\\b`);
